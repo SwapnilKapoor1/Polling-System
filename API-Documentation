@@ -1,0 +1,81 @@
+
+Below are the details of the available routes and their functionalities.
+
+Routes:
+
+1. Create a Question
+
+    Route: /questions/create
+    
+    Method: POST
+    
+    Description: Creates a new question.
+    
+    Request Body:
+    
+    text (string): The text of the question.
+
+2. Add Options to a Question
+
+    Route: /questions/:id/options/create
+
+    Method: POST
+    
+    Description: Adds options to a specific question.
+    
+    Request Parameters:
+    
+    id (string): The unique identifier of the question.
+
+3. Delete a Question
+
+    Route: /questions/:id/delete
+    
+    Method: DELETE
+    
+    Description: Deletes a question.
+    
+    Request Parameters:
+
+    id (string): The unique identifier of the question.
+
+4. Delete an Option
+
+    Route: /options/:id/delete
+    
+    Method: DELETE
+    
+    Description: Deletes an option.
+    
+    Request Parameters:
+    
+    id (string): The unique identifier of the option.
+
+5. Add Vote to an Option
+
+    Route: /options/:id/add_vote
+    
+    Method: PUT
+    
+    Description: Increments the count of votes for an option.
+    
+    Request Parameters:
+    
+    id (string): The unique identifier of the option.
+
+6. View a Question with Options and Votes
+
+    Route: /questions/:id
+    
+    Method: GET
+    
+    Description: Retrieves a question along with its options and all the votes given to each option.
+    
+    Request Parameters:
+    
+    id (string): The unique identifier of the question.
+
+  Notes: 
+  For deletion operations, additional checks have been implemented:
+1. A question cannot be deleted if one of its options has received votes. 
+2. An option cannot be deleted if it has even one vote given to it.
